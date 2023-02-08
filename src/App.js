@@ -16,10 +16,12 @@ function App() {
             </Box>
           </Container>
           <p>
-            GitHub Codespaces <span className="heart">♥️</span> React
+            <span className="heart">♥️</span> 🖥️🐶☕
           </p>
           <p className="small">
-            Edit <code>src/App.js</code> and save to reload.
+            <code>
+              Site is under construction 🔧
+            </code>
           </p>
         </header>
       </ThemeProvider>
