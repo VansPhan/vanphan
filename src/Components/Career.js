@@ -6,6 +6,7 @@ import {
   Typography,
   Box,
 } from '@mui/material';
+import CareerCard from './CareerCard';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -76,7 +77,7 @@ export default function Career() {
         />
       </Tabs>
       <TabPanel value={value} index={0}>
-        CARD GOES HERE
+        <CareerCard></CareerCard>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
