@@ -1,29 +1,28 @@
+import React, { useState } from 'react';
 import './App.css';
 import { ThemeProvider, Box, Container } from '@mui/material';
 import { theme } from './Components/Theme';
+import { Pages } from './Utilities/Pages';
 import Navbar from './Components/Navbar/Navbar';
-import { AboutMe } from './Content/AboutMe';
+import Home from './Components/Home';
+import { Footer } from './Components/Footer';
 
 function App() {
+  const [page, setPage] = useState(Pages.HOME);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <header className="App-header">
-          <Navbar></Navbar>
+        <body className="App-body">
+          <Navbar onPageChange={setPage}></Navbar>
           <Container>
             <Box sx={{ my: 2 }}>
-              { AboutMe }
+              { page === Pages.HOME && <Home /> }
+              { page === Pages.BLOG && <h1>YAAHH</h1> }
             </Box>
           </Container>
-          <p>
-            <span className="heart">♥️</span> 🖥️🐶☕
-          </p>
-          <p className="small">
-            <code>
-              Site is under construction 🔧
-            </code>
-          </p>
-        </header>
+          { Footer }
+        </body>
       </ThemeProvider>
     </div>
   );

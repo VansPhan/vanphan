@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import {
   AppBar,
   Breadcrumbs,
-  Link,
+  Button,
   Toolbar,
   CssBaseline,
   useScrollTrigger,
   Slide,
 } from '@mui/material';
+import { Pages } from '../../Utilities/Pages';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -36,9 +37,20 @@ export default function Navbar(props) {
         <AppBar>
           <Toolbar>
             <Breadcrumbs aria-label="breadcrumb">
-              <Link underline="hover" color="inherit" href="/">
+              <Button
+                variant="text"
+                color="inherit"
+                onClick={() => props.onPageChange(Pages.HOME)}
+              >
+                Home
+              </Button>
+              <Button
+                variant="text"
+                color="inherit"
+                onClick={() => props.onPageChange(Pages.BLOG)}
+              >
                 Blog
-              </Link>
+              </Button>
             </Breadcrumbs>
           </Toolbar>
         </AppBar>
